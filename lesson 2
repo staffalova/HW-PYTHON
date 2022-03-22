@@ -1,0 +1,73 @@
+# task 1
+list_1 = [1, None, 'Sasha', True, 3.3]
+def my_type(el):
+    for el in range(len(list_1)):
+        print(type(list_1[el]))
+    return
+my_type(list_1)
+
+# task 2
+l = list(input("Введите 4 элементa списка через пробел: "))
+l[0], l[2] = l[2], l[0]
+l[4], l[6] = l[6], l[4]
+print(" ".join(l))
+
+# task 3
+number = int(input("Enter month number: "))
+if number <= 12 and number >= 1:
+    month_dict = {1: 'Январь',
+                  2: 'Февраль',
+                  3: 'Март',
+                  4: 'Апрель',
+                  5: 'Май',
+                  6: 'Июнь',
+                  7: 'Июль',
+                  8: 'Август',
+                  9: 'Сентябрь',
+                  10: 'Октябрь',
+                  11: 'Ноябрь',
+                  12: 'Декабрь'}
+    print(f"Ваш месяц {month_dict[number]}")
+seasons_list = ['зима', 'весна', 'лето', 'осень']
+
+if number == 1 or number == 12 or number == 2:
+    print('Это', seasons_list[0])
+elif number == 3 or number == 4 or number == 5:
+    print('Это', seasons_list[1])
+elif number == 6 or number == 7 or number == 8:
+    print('Это', seasons_list[2])
+elif number== 9 or number == 10 or number == 11:
+    print('Это', seasons_list[3])
+else:
+    print("Такого месяца не существует")
+
+# task 4
+my_str = input("введите строку ")
+my_word = []
+num = 1
+for el in range(my_str.count(' ') + 1):
+    my_word = my_str.split()
+    if len(str(my_word)) <= 10:
+        print(f" {num} {my_word [el]}")
+        num += 1
+    else:
+        print(f" {num} {my_word [el] [0:10]}")
+        num += 1
+
+# task 5
+number = int(input("Введите номер конкурсанта: "))
+my_list = [7, 4, 3, 2]
+c = my_list.count(number)
+for element in my_list:
+    if c > 0:
+        i = my_list.index(number)
+        my_list.insert(i+c, number)
+        break
+    else:
+        if number > element:
+            j = my_list.index(element)
+            my_list.insert(j, number)
+            break
+        elif number < my_list[len(my_list) - 1]:
+            my_list.append(number)
+print('Рейтинг теперь такой:', my_list)
